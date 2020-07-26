@@ -94,6 +94,7 @@ class ContactHelper:
         # submit group creation
         wd.find_element_by_xpath ( "(//input[@name='submit'])[2]" ).click ()
         self.retern_to_home_page ( )
+        self.contact_cashe = None
 
     def select_contact(self):
         wd = self.app.wd
@@ -111,6 +112,7 @@ class ContactHelper:
         wd.find_element_by_xpath ( "//input[@value='Delete']" ).click ()
         wd.switch_to_alert ().accept ()
         self.retern_to_home_page ( )
+        self.contact_cashe = None
 
     def delete_first_contact(self):
         self.delete_contact_by_index(0)
